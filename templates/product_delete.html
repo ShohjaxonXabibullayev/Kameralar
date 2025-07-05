@@ -1,0 +1,7 @@
+<h2>Siz camerani o'chirishni hohlaysizmi?</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Ha</button>
+    <a href="{% url 'product_detail' product.id %}">Yo'q</a>
+</form>

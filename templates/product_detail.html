@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Kamera Tafsilotlari</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .camera-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .camera-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .details {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .details strong {
+            display: inline-block;
+            width: 150px;
+            color: #555;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            color: white;
+            background: #3498db;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-link a:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{ product.make }} Tafsilotlari</h2>
+
+        <div class="camera-image">
+            <img src="{{ product.image.url }}" alt="{{ product.make }}">
+        </div>
+
+        <div class="details">
+            <p><strong>Model (Make):</strong> {{ product.make }}</p>
+            <p><strong>Ruxsat (Resolution):</strong> {{ product.resolution }}</p>
+            <p><strong>Zoom:</strong> {{ product.zoom }}</p>
+            <p><strong>Narx:</strong> {{ product.price }} so'm</p>
+        </div>
+<a href="{% url 'product_delete' product.id %}">⬅ Delete</a><hr>
+<a href="{% url 'product_update' product.id %}">⬅ Update</a>
+        <div class="back-link">
+            <a href="{% url 'product_list' %}">← Barcha kameralar</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz haqimizda - Camera Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #212121;
+            padding: 20px 0;
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #00bcd4;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #00bcd4, #2196f3);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #212121;
+            color: #ccc;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Bosh sahifa</a></li>
+                    <li><a href="{% url 'about' %}">Biz haqimizda</a></li>
+                    <li><a href="{% url 'product_list' %}">Maxsulotlar</a></li>
+                    <li><a href="{% url 'contact' %}">Aloqa</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Biz haqimizda</h1>
+        <p>Professional kameralar do'koni</p>
+    </section>
+
+    <section class="section">
+        <h2>Bizning hikoyamiz</h2>
+        <p>Camera Shop — 2015-yildan beri foto va video texnologiyalar bozorida faoliyat yuritib kelayotgan yetakchi kompaniyalardan biridir. Bizning maqsadimiz — professional va havaskor suratkashlarga eng yaxshi kameralar, linzalar va aksessuarlarni taqdim etishdir.</p>
+
+        <p>Biz Canon, Nikon, Sony, Fujifilm kabi brendlarning rasmiy distribyutori bo‘lib, barcha mahsulotlar original va kafolatlangan. Biz mijozlarimizni qadrlaymiz va har doim eng yaxshi xizmat ko‘rsatishga harakat qilamiz.</p>
+
+        <p>Yiliga minglab xaridorlar bizdan xarid qiladi. Ularning ishonchi bizning kuchimizdir.</p>
+
+        <h2>Nega aynan biz?</h2>
+        <ul>
+            <li>✅ Katta mahsulot tanlovi</li>
+            <li>✅ Kafolatlangan original mahsulotlar</li>
+            <li>✅ Tajribali maslahatchilar</li>
+            <li>✅ Tez yetkazib berish xizmati</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Camera Shop. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+</body>
+</html>

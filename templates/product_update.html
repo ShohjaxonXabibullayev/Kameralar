@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Kamerani Tahrirlash</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #eef2f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background-color: #27ae60;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #219150;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #2980b9;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Kamerani Tahrirlash</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="make" value="{{ product.make }}" placeholder="Brend nomi" required>
+      <input type="text" name="resolution" value="{{ product.resolution }}" placeholder="Ruxsat (masalan: 4K)" required>
+      <input type="text" name="zoom" value="{{ product.zoom }}" placeholder="Zoom darajasi (masalan: 10x)" required>
+      <input type="number" name="price" value="{{ product.price }}" placeholder="Narxi (so'm)" step="0.01" required>
+      <input type="file" name="image">
+      <input type="submit" value="Yangilash">
+    </form>
+
+    {% if product.id %}
+      <div class="back-link">
+        <a href="{% url 'product_detail' product.id %}">← Orqaga</a>
+      </div>
+    {% endif %}
+
+  </div>
+
+</body>
+</html>
