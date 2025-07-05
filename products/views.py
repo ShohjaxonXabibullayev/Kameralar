@@ -31,11 +31,12 @@ class CameraUpdateView(UpdateView):
     model = Cameralar
     form_class = ProductForm
     template_name = 'product_form.html'
-    success_url = reverse_lazy('products_list')
-
+    success_url = reverse_lazy('product_list')
+    context_object_name = 'product'
 
 # Mahsulotni o‘chirish
 class CameraDeleteView(DeleteView):
     model = Cameralar
     template_name = 'product_delete.html'
     success_url = reverse_lazy('product_list')
+    context_object_name = 'product'
